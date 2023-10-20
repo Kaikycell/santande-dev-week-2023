@@ -12,7 +12,7 @@ public class Account {
     @Column(unique = true)
     private String number;
     private String agency;
-    @Column(scale = 13, precision = 2)
+    @Column(precision = 13, scale = 2)
     private BigDecimal balance;
     @Column(name = "additional_limit", precision = 13, scale = 2)
     private BigDecimal limit;
@@ -23,7 +23,9 @@ public class Account {
 
     public String getNumber() { return number;}
 
-    public void setNumber (String agency) { this.agency = agency;}
+    public void setNumber (String number) {
+        this.number = number;
+    }
 
     public void setId(long id) {
         this.id = id;

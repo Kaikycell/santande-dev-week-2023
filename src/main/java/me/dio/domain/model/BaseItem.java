@@ -1,9 +1,7 @@
 package me.dio.domain.model;
+import jakarta.persistence.*;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import java.math.BigDecimal;
 
 @MappedSuperclass
 public abstract class BaseItem {
@@ -12,7 +10,7 @@ public abstract class BaseItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String icon;
-    private String descripiton;
+    private String description;
 
     public Long getId() {
         return id;
@@ -30,12 +28,12 @@ public abstract class BaseItem {
         this.icon = icon;
     }
 
-    public String getDescripiton() {
-        return descripiton;
+    public String setDescription() {
+        return description;
     }
 
-    public void setDescripiton(String descripiton) {
-        this.descripiton = descripiton;
+    public void setDescription(String descripton) {
+        this.description = descripton;
     }
 }
 

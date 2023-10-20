@@ -1,7 +1,5 @@
 package me.dio.domain.model;
-
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity(name = "tb_user")
@@ -19,7 +17,7 @@ public class User {
     private Card card;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Feature> feature;
+    private List<Feature> features;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private  List<News> news;
@@ -57,11 +55,11 @@ public class User {
     }
 
     public List<Feature> getFeature() {
-        return feature;
+        return features;
     }
 
     public void setFeature(List<Feature> feature) {
-        this.feature = feature;
+        this.features = feature;
     }
 
     public List<News> getNews() {
