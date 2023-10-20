@@ -1,42 +1,42 @@
 # Santander Dev Week 2023
 Java RESTful API criada para a Santander Dev Week.
 
-## Diagrama de Classes
+## Diagrama de Classes (Domínio da API)
 
 ```mermaid
 classDiagram
-    class User {
-        - name: String
-        - account: Account
-        - features: List<Feature>
-        - card: Card
-        - news: List<News>
-    }
+  class User {
+    -String name
+    -Account account
+    -Feature[] features
+    -Card card
+    -News[] news
+  }
 
-    class Account {
-        - number: String
-        - agency: String
-        - balance: Float
-        - limit: Float
-    }
+  class Account {
+    -String number
+    -String agency
+    -Number balance
+    -Number limit
+  }
 
-    class Feature {
-        - icon: String
-        - description: String
-    }
+  class Feature {
+    -String icon
+    -String description
+  }
 
-    class Card {
-        - number: String
-        - limit: Float
-    }
+  class Card {
+    -String number
+    -Number limit
+  }
 
-    class News {
-        - icon: String
-        - description: String
-    }
+  class News {
+    -String icon
+    -String description
+  }
 
-    User "1" *-- "1" Account
-    User "1" *-- "N" Feature
-    User "1" *-- "1" Card
-    User "1" *-- "N" News
+  User "1" *-- "1" Account
+  User "1" *-- "N" Feature
+  User "1" *-- "1" Card
+  User "1" *-- "N" News
 ```
